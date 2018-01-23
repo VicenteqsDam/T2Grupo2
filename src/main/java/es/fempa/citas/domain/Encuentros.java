@@ -1,4 +1,4 @@
-package es.fempa.citas.clases;
+package es.fempa.citas.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
