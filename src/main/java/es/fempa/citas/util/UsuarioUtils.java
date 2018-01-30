@@ -8,5 +8,4 @@ public class UsuarioUtils {
 		u.setIdUsuario(1);
 		return u;
 	}
-
 }
