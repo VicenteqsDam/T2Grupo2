@@ -48,9 +48,9 @@ public class Usuario {
 	@Column(name = "cp")
 	private Integer cp;
 	
-	/*@ManyToOne
+	@ManyToOne
 	@JoinColumn(name = "idSexo")
-	private Sexo idSexo;*/
+	private Sexo idSexo;
 	
 	@ManyToOne
 	@JoinColumn(name = "idOrientacion")
@@ -83,11 +83,11 @@ public class Usuario {
 	
 	/*@ManyToOne
 	@JoinColumn(name = "idPaisOrigen")
-	private PaisOrigen idPaisOrigen;
+	private PaisOrigen idPaisOrigen;*/
 	
 	@ManyToOne
 	@JoinColumn(name = "idEstudios")
-	private Estudios idEstudios;*/
+	private Estudios idEstudios;
 	
 	@ManyToMany
 	@JoinTable(name = "usuarioIdioma",
@@ -105,11 +105,11 @@ public class Usuario {
 	@JoinColumn(name = "idFumador")
 	private Fumador idFumador;
 	
-	/*@ManyToOne
+	@ManyToOne
 	@JoinColumn(name = "idBebedor")
 	private Bebedor idBebedor;
 	
-	@OneToMany
+	/*@OneToMany
 	@JoinColumn(name = "idEstudios")
 	private Ocupacion idOcupacion;
 	
