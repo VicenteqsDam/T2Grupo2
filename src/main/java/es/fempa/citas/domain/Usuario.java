@@ -38,9 +38,9 @@ public class Usuario {
 	private Date fechaNacimiento;
 
 	@ManyToOne
-    @JoinColumn(name = "idCiudad")
+	@JoinColumn(name = "idCiudad")
 	private Ciudad idCiudad;
-	
+
 	@Column(name = "pass")
 	private String pass;
 
@@ -50,15 +50,15 @@ public class Usuario {
 	@ManyToOne
 	@JoinColumn(name = "idSexo")
 	private Sexo idSexo;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "idOrientacion")
 	private Orientacion idOrientacion;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "idFoto")
 	private Foto idFoto;
-	
+
 	@Column(name = "altura")
 	private float altura;
 
@@ -68,59 +68,63 @@ public class Usuario {
 	@ManyToOne
 	@JoinColumn(name = "idPelo")
 	private Pelo idPelo;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "idOjo")
 	private Ojos idOjo;
-	
-	@Column(name="descripcion")
+
+	@Column(name = "descripcion")
 	private String descripcion;
 
 	@ManyToOne
 	@JoinColumn(name = "idPais")
 	private Pais idPais;
-	
-	/*@ManyToOne
-	@JoinColumn(name = "idPaisOrigen")
-	private PaisOrigen idPaisOrigen;*/
-	
+
+	/*
+	 * @ManyToOne
+	 * 
+	 * @JoinColumn(name = "idPaisOrigen") private PaisOrigen idPaisOrigen;
+	 */
+
 	@ManyToOne
-	@JoinColumn(name = "idEstudios")
 	private Estudios idEstudios;
-	
+
 	@ManyToMany
-	@JoinTable(name = "usuarioIdioma",
-    joinColumns = { @JoinColumn(name = "idUsuario")},
-    inverseJoinColumns = { @JoinColumn(name = "id")})
+	@JoinTable(name = "usuarioIdioma", joinColumns = { @JoinColumn(name = "idUsuario") }, inverseJoinColumns = {
+			@JoinColumn(name = "id") })
 	private List<Idioma> idiomas = new ArrayList<>();
-	
-	/*@ManyToMany
-	@JoinTable(name = "usuarioInteres",
-	joinColumns = { @JoinColumn(name ="idUsuario")},
-	inverseJoinColumns = { @JoinColumn (name = "idInteres")})
-	private List<Interes> intereses = new ArrayList<>();*/
-	
+
+	/*
+	 * @ManyToMany
+	 * 
+	 * @JoinTable(name = "usuarioInteres", joinColumns = { @JoinColumn(name
+	 * ="idUsuario")}, inverseJoinColumns = { @JoinColumn (name = "idInteres")})
+	 * private List<Interes> intereses = new ArrayList<>();
+	 */
+
 	@ManyToOne
 	@JoinColumn(name = "idFumador")
 	private Fumador idFumador;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "idBebedor")
 	private Bebedor idBebedor;
-	
-	/*@OneToMany
-	@JoinColumn(name = "idEstudios")
-	private Ocupacion idOcupacion;
-	
-	@ManyToOne
-	@JoinColumn(name = "idBuscaFumador")
-	private BuscaFumador idBuscaFumador;
-	
-	@ManyToOne
-	@JoinColumn(name = "idBuscaBebedor")
-	private BuscaBebedor idBuscaBebedor;*/
-	
-	@Column(name="perfilPublico")
+
+	/*
+	 * @OneToMany
+	 * 
+	 * @JoinColumn(name = "idEstudios") private Ocupacion idOcupacion;
+	 * 
+	 * @ManyToOne
+	 * 
+	 * @JoinColumn(name = "idBuscaFumador") private BuscaFumador idBuscaFumador;
+	 * 
+	 * @ManyToOne
+	 * 
+	 * @JoinColumn(name = "idBuscaBebedor") private BuscaBebedor idBuscaBebedor;
+	 */
+
+	@Column(name = "perfilPublico")
 	private boolean perfilPublico;
 
 	@Column(name = "edadMinima")

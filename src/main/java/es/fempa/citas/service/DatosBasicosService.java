@@ -22,9 +22,10 @@ public class DatosBasicosService {
 		return this.estudiosRepository.findAll();
 	}
 
-	public Estudios findId(Integer id) {
-		return this.estudiosRepository.findIdEstudios(id);
-	}
+	/*
+	 * public Estudios findId(Integer id) { return
+	 * this.estudiosRepository.findIdEstudios(id); }
+	 */
 
 	@Autowired
 	public IdiomaRepository idiomaRepository;
