@@ -1,13 +1,9 @@
 package es.fempa.citas.domain;
 
-import java.util.List;
-
-import java.util.List;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -19,8 +15,9 @@ public class Pais {
 	@GeneratedValue
 	@Id
 	private int idPais;
+	
+	@Column(name = "pais")
 	private String pais;
 
-	@OneToMany(mappedBy = "origen")
-	private List<Usuario> listUsuario;
+
 }

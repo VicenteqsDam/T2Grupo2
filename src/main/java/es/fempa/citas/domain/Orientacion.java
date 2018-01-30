@@ -1,11 +1,9 @@
 package es.fempa.citas.domain;
 
-import java.util.List;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -17,8 +15,8 @@ public class Orientacion {
 	@GeneratedValue
 	@Id
 	private int idOrientacion;
+	
+	@Column(name = "orientacion")
 	private String orientacion;
 
-	@OneToMany(mappedBy = "orientacion")
-	private List<Usuario> listUsuario;
 }

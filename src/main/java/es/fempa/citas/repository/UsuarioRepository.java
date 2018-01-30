@@ -7,9 +7,8 @@ import org.springframework.data.repository.query.Param;
 import es.fempa.citas.domain.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
-	@Query("SELECT u FROM usuario u WHERE p.nombre = ?1 AND p.pass = ?1")
-	void logIn(@Param("nombre")String nombre,@Param("pass")String pass);
+	@Query("SELECT u FROM Usuario u WHERE u.nombre = ?1 AND u.pass = ?2")
+	void logIn(String nombre,String pass);
 	
-	@Query("SELECT u FROM usuario u WHERE u.id = ?1")
-	Usuario findById(@Param("id")Integer id);
+	Usuario findByIdUsuario(Integer id);
 }

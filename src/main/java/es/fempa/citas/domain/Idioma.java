@@ -28,8 +28,5 @@ public class Idioma {
 	@NotNull
     @Size(max = 100)
     private String idioma;
-	
-	@ManyToMany(mappedBy = "idioma")
-	private List<Usuario> usuarios = new ArrayList<>();
 	 
 }

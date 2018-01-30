@@ -40,7 +40,7 @@ public class Usuario {
 	
 	@ManyToOne
     @JoinColumn(name = "idCiudad")
-	private Integer idCiudad;
+	private Ciudad idCiudad;
 	
 	@Column(name = "pass")
 	private String pass;
@@ -48,17 +48,17 @@ public class Usuario {
 	@Column(name = "cp")
 	private Integer cp;
 	
-	@ManyToOne
+	/*@ManyToOne
 	@JoinColumn(name = "idSexo")
-	private Integer idSexo;
+	private Sexo idSexo;*/
 	
 	@ManyToOne
 	@JoinColumn(name = "idOrientacion")
-	private Integer idOrientacion;
+	private Orientacion idOrientacion;
 	
 	@ManyToOne
 	@JoinColumn(name = "idFoto")
-	private Integer idFoto;
+	private Foto idFoto;
 	
 	@Column(name = "altura")
 	private float altura;
@@ -68,58 +68,58 @@ public class Usuario {
 	
 	@ManyToOne
 	@JoinColumn(name = "idPelo")
-	private Integer idPelo;
+	private Pelo idPelo;
 	
 	@ManyToOne
 	@JoinColumn(name = "idOjo")
-	private Integer idOjos;
+	private Ojos idOjo;
 	
 	@Column(name="descripcion")
 	private String descripcion;
 	
 	@ManyToOne
 	@JoinColumn(name = "idPais")
-	private Integer idPais;
+	private Pais idPais;
 	
-	@ManyToOne
+	/*@ManyToOne
 	@JoinColumn(name = "idPaisOrigen")
-	private Integer idPaisOrigen;
+	private PaisOrigen idPaisOrigen;
 	
 	@ManyToOne
 	@JoinColumn(name = "idEstudios")
-	private Integer idEstudios;
+	private Estudios idEstudios;*/
 	
 	@ManyToMany
 	@JoinTable(name = "usuarioIdioma",
     joinColumns = { @JoinColumn(name = "idUsuario")},
-    inverseJoinColumns = { @JoinColumn(name = "idIdioma")})
+    inverseJoinColumns = { @JoinColumn(name = "id")})
 	private List<Idioma> idiomas = new ArrayList<>();
 	
-	@ManyToMany
+	/*@ManyToMany
 	@JoinTable(name = "usuarioInteres",
 	joinColumns = { @JoinColumn(name ="idUsuario")},
 	inverseJoinColumns = { @JoinColumn (name = "idInteres")})
-	private List<Interes> intereses = new ArrayList<>();
+	private List<Interes> intereses = new ArrayList<>();*/
 	
 	@ManyToOne
 	@JoinColumn(name = "idFumador")
-	private Integer idFumador;
+	private Fumador idFumador;
 	
-	@ManyToOne
+	/*@ManyToOne
 	@JoinColumn(name = "idBebedor")
-	private Integer idBebedor;
+	private Bebedor idBebedor;
 	
 	@OneToMany
 	@JoinColumn(name = "idEstudios")
-	private Integer idOcupacion;
+	private Ocupacion idOcupacion;
 	
 	@ManyToOne
 	@JoinColumn(name = "idBuscaFumador")
-	private Integer idBuscaFumador;
+	private BuscaFumador idBuscaFumador;
 	
 	@ManyToOne
 	@JoinColumn(name = "idBuscaBebedor")
-	private Integer idBuscaBebedor;
+	private BuscaBebedor idBuscaBebedor;*/
 	
 	@Column(name="perfilPublico")
 	private boolean perfilPublico;

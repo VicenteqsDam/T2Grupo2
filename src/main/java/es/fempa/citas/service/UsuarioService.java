@@ -21,6 +21,6 @@ public class UsuarioService {
 	}
 	
 	public Usuario findById(Integer id) {
-		return this.usuarioRepository.findById(id);
+		return this.usuarioRepository.findByIdUsuario(id);
 	}
 }
