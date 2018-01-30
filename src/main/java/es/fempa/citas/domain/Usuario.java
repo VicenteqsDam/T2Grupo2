@@ -13,7 +13,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -24,30 +23,30 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Usuario {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer idUsuario;
-	
+
 	@Column(name = "nombre")
 	private String nombre;
-	
+
 	@Column(name = "apellidos")
 	private String apellidos;
-	
+
 	@Column(name = "fechaNacimiento")
 	private Date fechaNacimiento;
-	
+
 	@ManyToOne
     @JoinColumn(name = "idCiudad")
 	private Ciudad idCiudad;
 	
 	@Column(name = "pass")
 	private String pass;
-	
+
 	@Column(name = "cp")
 	private Integer cp;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "idSexo")
 	private Sexo idSexo;
@@ -62,10 +61,10 @@ public class Usuario {
 	
 	@Column(name = "altura")
 	private float altura;
-	
+
 	@Column(name = "peso")
 	private float peso;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "idPelo")
 	private Pelo idPelo;
@@ -76,7 +75,7 @@ public class Usuario {
 	
 	@Column(name="descripcion")
 	private String descripcion;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "idPais")
 	private Pais idPais;
@@ -123,10 +122,10 @@ public class Usuario {
 	
 	@Column(name="perfilPublico")
 	private boolean perfilPublico;
-	
-	@Column(name="edadMinima")
+
+	@Column(name = "edadMinima")
 	private Integer edadMinima;
-	
-	@Column(name="edadMaxima")
+
+	@Column(name = "edadMaxima")
 	private Integer edadMaxima;
 }
