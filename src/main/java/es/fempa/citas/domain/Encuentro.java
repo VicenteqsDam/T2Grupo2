@@ -23,15 +23,20 @@ public class Encuentro implements Serializable {
 	@GeneratedValue
 	@Id
 	private Integer idEncuentro;
+
 	@ManyToOne
 	private Usuario usuarioSolicitante;
+
 	@ManyToOne
 	private Usuario usuarioSolicitado;
+
 	private String fecha;
 	private String hora;
 	private String lugar;
+
 	@OneToMany
 	private List<Plan> plan;
+
 	private boolean aceptado;
 	private String comentSolicitante;
 	private String comentSolicitado;

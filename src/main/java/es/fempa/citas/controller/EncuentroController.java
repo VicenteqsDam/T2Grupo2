@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import es.fempa.citas.domain.Encuentro;
+import es.fempa.citas.domain.Plan;
 import es.fempa.citas.service.EncuentroService;
 
 @RestController
@@ -19,18 +20,34 @@ public class EncuentroController {
 	@Autowired
 	private EncuentroService encuentroService;
 
-	@GetMapping("/findAll")
-	public List<Encuentro> findAll(Integer id) {
-		return this.encuentroService.findAll(id);
+	@GetMapping("/findAllEncuentro")
+	public List<Encuentro> findAllEncuentro(Integer id) {
+		return this.encuentroService.findAllEncuentro(id);
 	}
 
-	@PostMapping("/save")
-	public void saveClase(@RequestBody Encuentro e) {
-		this.encuentroService.saveClase(e);
+	@PostMapping("/saveEncuentro")
+	public void saveEncuentro(@RequestBody Encuentro e) {
+		this.encuentroService.saveEncuentro(e);
 	}
 
 	@RequestMapping("/findEncuentro/{id}")
-	public Encuentro findByID(@PathVariable Integer id) {
+	public Encuentro findByIDEncuentro(@PathVariable Integer id) {
 		return this.encuentroService.findEncuentro(id);
 	}
+
+	@GetMapping("/findAllPlan")
+	public List<Plan> findAllPlan(Integer id) {
+		return this.encuentroService.findAllPlan();
+	}
+
+	@PostMapping("/savePlan")
+	public void savePlan(@RequestBody Plan p) {
+		this.encuentroService.savePlan(p);
+	}
+
+	@RequestMapping("/findPlan/{id}")
+	public Plan findByIDPlan(@PathVariable Integer id) {
+		return this.encuentroService.findPlan(id);
+	}
+
 }
