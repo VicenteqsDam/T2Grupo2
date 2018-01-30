@@ -1,12 +1,18 @@
 package es.fempa.citas.domain;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -14,12 +20,13 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "Usuario")
+@Table(name = "usuario")
 @Getter
 @Setter
 public class Usuario {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer idUsuario;
 	
 	@Column(name = "nombre")
@@ -31,7 +38,7 @@ public class Usuario {
 	@Column(name = "fechaNacimiento")
 	private Date fechaNacimiento;
 	
-	@OneToMany
+	@ManyToOne
     @JoinColumn(name = "idCiudad")
 	private Integer idCiudad;
 	
@@ -41,15 +48,15 @@ public class Usuario {
 	@Column(name = "cp")
 	private Integer cp;
 	
-	@OneToMany
+	@ManyToOne
 	@JoinColumn(name = "idSexo")
 	private Integer idSexo;
 	
-	@OneToMany
+	@ManyToOne
 	@JoinColumn(name = "idOrientacion")
 	private Integer idOrientacion;
 	
-	@OneToMany
+	@ManyToOne
 	@JoinColumn(name = "idFoto")
 	private Integer idFoto;
 	
@@ -59,38 +66,46 @@ public class Usuario {
 	@Column(name = "peso")
 	private float peso;
 	
-	@OneToMany
+	@ManyToOne
 	@JoinColumn(name = "idPelo")
 	private Integer idPelo;
 	
-	@OneToMany
-	@JoinColumn(name = "idOjos")
+	@ManyToOne
+	@JoinColumn(name = "idOjo")
 	private Integer idOjos;
 	
 	@Column(name="descripcion")
 	private String descripcion;
 	
-	@OneToMany
+	@ManyToOne
 	@JoinColumn(name = "idPais")
 	private Integer idPais;
 	
-	@OneToMany
+	@ManyToOne
 	@JoinColumn(name = "idPaisOrigen")
 	private Integer idPaisOrigen;
 	
-	@OneToMany
+	@ManyToOne
 	@JoinColumn(name = "idEstudios")
 	private Integer idEstudios;
 	
 	@ManyToMany
-	@JoinColumn(name = "idIdiomas")
-	private Integer idIdiomas;
+	@JoinTable(name = "usuarioIdioma",
+    joinColumns = { @JoinColumn(name = "idUsuario")},
+    inverseJoinColumns = { @JoinColumn(name = "idIdioma")})
+	private List<Idioma> idiomas = new ArrayList<>();
 	
-	@OneToMany
+	@ManyToMany
+	@JoinTable(name = "usuarioInteres",
+	joinColumns = { @JoinColumn(name ="idUsuario")},
+	inverseJoinColumns = { @JoinColumn (name = "idInteres")})
+	private List<Interes> intereses = new ArrayList<>();
+	
+	@ManyToOne
 	@JoinColumn(name = "idFumador")
 	private Integer idFumador;
 	
-	@OneToMany
+	@ManyToOne
 	@JoinColumn(name = "idBebedor")
 	private Integer idBebedor;
 	
@@ -98,11 +113,11 @@ public class Usuario {
 	@JoinColumn(name = "idEstudios")
 	private Integer idOcupacion;
 	
-	@OneToMany
+	@ManyToOne
 	@JoinColumn(name = "idBuscaFumador")
 	private Integer idBuscaFumador;
 	
-	@OneToMany
+	@ManyToOne
 	@JoinColumn(name = "idBuscaBebedor")
 	private Integer idBuscaBebedor;
 	

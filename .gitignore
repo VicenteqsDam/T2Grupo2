@@ -1,3 +1,7 @@
 /target/
+<<<<<<< Updated upstream
 /bin/
 /.settings/
+=======
+/bin//.settings/
+>>>>>>> Stashed changes
