@@ -1,8 +1,11 @@
 package es.fempa.citas.domain;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,10 +13,12 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Estudios {
+public class ColorPelo {
 	@Id
 	@GeneratedValue
-	private Integer idEstudios;
-	private String estudios;
+	private Integer idPelo;
+	private String colorPelo;
 
+	@OneToMany(mappedBy = "cPelo")
+	private List<Usuario> usuarioList;
 }

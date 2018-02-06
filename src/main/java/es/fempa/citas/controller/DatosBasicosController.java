@@ -21,10 +21,10 @@ public class DatosBasicosController {
 		return this.dbService.findAllEstudio();
 	}
 
-	@GetMapping("/findEstudio/{id}")
-	public Estudios findIdEstudios(Integer id) {
-		return this.dbService.findId(id);
-	}
+	/*
+	 * @GetMapping("/findEstudio/{id}") public Estudios findIdEstudios(Integer id) {
+	 * return this.dbService.findId(id); }
+	 */
 
 	@GetMapping("/listaIdiomas")
 	public List<Idioma> findAllIdioma() {

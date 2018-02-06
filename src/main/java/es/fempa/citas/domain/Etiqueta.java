@@ -5,17 +5,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-import lombok.Getter;
-import lombok.Setter;
-
 @Entity
-@Getter
-@Setter
-public class Sexo {
-	@Id
-	@GeneratedValue
-	private Integer idSexo;
+public class Etiqueta {
 
-	@Column(name = "tipo")
-	private String sexo;
+	@GeneratedValue
+	@Id
+	private int idEtiqueta;
+
+	@Column(name = "etiqueta")
+	private String etiqueta;
+
+	@Column(name = "icono")
+	private String icono;
 }

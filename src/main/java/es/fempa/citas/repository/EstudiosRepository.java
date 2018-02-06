@@ -10,6 +10,6 @@ public interface EstudiosRepository extends JpaRepository<Estudios, Integer> {
 
 	public List<Estudios> findByIdEstudios(Integer id);
 
-	public Estudios findIdEstudios(Integer id);
+	// public Estudios findIdEstudios(Integer id);
 
 }
