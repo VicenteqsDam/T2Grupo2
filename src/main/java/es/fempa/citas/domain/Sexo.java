@@ -1,6 +1,5 @@
 package es.fempa.citas.domain;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,7 +14,5 @@ public class Sexo {
 	@Id
 	@GeneratedValue
 	private Integer idSexo;
-
-	@Column(name = "tipo")
 	private String sexo;
 }
