@@ -36,6 +36,9 @@ public class Usuario {
 
 	@Column(name = "fechaNacimiento")
 	private Date fechaNacimiento;
+	
+	@Column(name = "email")
+	private String username;
 
 	@ManyToOne
 	@JoinColumn(name = "idCiudad")
