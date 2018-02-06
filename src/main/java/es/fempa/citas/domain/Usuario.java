@@ -36,7 +36,7 @@ public class Usuario {
 
 	@Column(name = "fechaNacimiento")
 	private Date fechaNacimiento;
-	
+
 	@Column(name = "email")
 	private String username;
 
@@ -45,7 +45,7 @@ public class Usuario {
 	private Ciudad idCiudad;
 
 	@Column(name = "pass")
-	private String pass;
+	private String password;
 
 	@Column(name = "cp")
 	private Integer cp;
