@@ -21,8 +21,8 @@ public class EncuentroController {
 	private EncuentroService encuentroService;
 
 	@GetMapping("/findAllMeeting")
-	public List<Encuentro> findAllEncuentro(Integer id) {
-		return this.encuentroService.findAllEncuentro(id);
+	public List<Encuentro> findAllEncuentro() {
+		return this.encuentroService.findAllEncuentro();
 	}
 
 	@PostMapping("/saveMeeting")

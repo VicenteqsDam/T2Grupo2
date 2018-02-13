@@ -9,6 +9,7 @@ import es.fempa.citas.domain.Encuentro;
 import es.fempa.citas.domain.Plan;
 import es.fempa.citas.repository.EncuentroRepository;
 import es.fempa.citas.repository.PlanRepository;
+import es.fempa.citas.util.UsuarioUtils;
 
 @Service
 public class EncuentroService {
@@ -16,8 +17,9 @@ public class EncuentroService {
 	@Autowired
 	public EncuentroRepository encuentroRepository;
 
-	public List<Encuentro> findAllEncuentro(Integer id) {
-		return this.encuentroRepository.findByUsuarioSolicitadoIdUsuario(id);
+	public List<Encuentro> findAllEncuentro() {
+		return this.encuentroRepository
+				.findByUsuarioSolicitadoIdUsuario(UsuarioUtils.getUsuarioLogeado().getIdUsuario());
 	}
 
 	public Encuentro findEncuentro(Integer id) {
