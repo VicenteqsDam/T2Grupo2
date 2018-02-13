@@ -14,7 +14,7 @@ public class OrientacionController {
 	@Autowired
 	private OrientacionService orientacion;
 
-	@GetMapping("/listaOrientacion")
+	@GetMapping("/findAllOrientation")
 	public List<Orientacion> findAll() {
 		return this.orientacion.findAll();
 	}

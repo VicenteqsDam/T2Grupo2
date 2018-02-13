@@ -14,7 +14,7 @@ public class SexoController {
 	@Autowired
 	private SexoService sexo;
 
-	@GetMapping("/listaSexo")
+	@GetMapping("/findAllSex")
 	public List<Sexo> findAll() {
 		return this.sexo.findAll();
 	}

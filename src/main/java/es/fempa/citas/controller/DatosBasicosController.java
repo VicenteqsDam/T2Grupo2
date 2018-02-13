@@ -16,27 +16,22 @@ public class DatosBasicosController {
 	@Autowired
 	private DatosBasicosService dbService;
 
-	@GetMapping("/findAllEstudios")
+	@GetMapping("/findAllStudies")
 	public List<Estudios> findAllEstudios() {
 		return this.dbService.findAllEstudio();
 	}
 
-	/*
-	 * @GetMapping("/findEstudio/{id}") public Estudios findIdEstudios(Integer id) {
-	 * return this.dbService.findId(id); }
-	 */
-
-	@GetMapping("/listaIdiomas")
+	@GetMapping("/findAllLanguages")
 	public List<Idioma> findAllIdioma() {
 		return this.dbService.findAllIdioma();
 	}
 
-	@GetMapping("/listaOjos")
+	@GetMapping("/findAllEyes")
 	public List<Ojos> findAllOjos() {
 		return this.dbService.findAllOjos();
 	}
 
-	@GetMapping("/listaPelos")
+	@GetMapping("/findAllHair")
 	public List<Pelo> findAllPelos() {
 		return this.dbService.findAllPelos();
 	}

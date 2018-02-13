@@ -20,17 +20,17 @@ public class EncuentroController {
 	@Autowired
 	private EncuentroService encuentroService;
 
-	@GetMapping("/findAllEncuentro")
+	@GetMapping("/findAllMeeting")
 	public List<Encuentro> findAllEncuentro(Integer id) {
 		return this.encuentroService.findAllEncuentro(id);
 	}
 
-	@PostMapping("/saveEncuentro")
+	@PostMapping("/saveMeeting")
 	public void saveEncuentro(@RequestBody Encuentro e) {
 		this.encuentroService.saveEncuentro(e);
 	}
 
-	@RequestMapping("/findEncuentro/{id}")
+	@RequestMapping("/findMeeting/{id}")
 	public Encuentro findByIDEncuentro(@PathVariable Integer id) {
 		return this.encuentroService.findEncuentro(id);
 	}
