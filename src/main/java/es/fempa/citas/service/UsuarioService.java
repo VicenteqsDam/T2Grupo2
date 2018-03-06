@@ -11,16 +11,17 @@ public class UsuarioService {
 
 	@Autowired
 	public UsuarioRepository usuarioRepository;
-	
+
 	public void saveUser(Usuario u) {
 		this.usuarioRepository.save(u);
 	}
-	
-	public void loguear(String n,String p) {
+
+	public void loguear(String n, String p) {
 		this.usuarioRepository.logIn(n, p);
 	}
-	
+
 	public Usuario findById(Integer id) {
 		return this.usuarioRepository.findByIdUsuario(id);
 	}
+
 }

@@ -30,4 +30,5 @@ public class UsuarioController {
 	public Usuario findById(@PathVariable Integer id) {
 		return this.usuario.findById(id);
 	}
+
 }
