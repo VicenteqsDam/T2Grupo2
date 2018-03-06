@@ -15,7 +15,7 @@ public class Etiqueta {
 
 	@GeneratedValue
 	@Id
-	private int idEtiqueta;
+	private Integer idEtiqueta;
 
 	@Column(name = "etiqueta")
 	private String etiqueta;

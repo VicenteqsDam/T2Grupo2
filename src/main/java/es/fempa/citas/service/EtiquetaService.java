@@ -18,4 +18,12 @@ public class EtiquetaService {
 		return this.etiquetaRepository.findAll();
 	}
 
+	public void saveEtiqueta(Etiqueta e) {
+		this.etiquetaRepository.save(e);
+	}
+
+	public void deleteEtiqueta(Integer id) {
+		this.etiquetaRepository.deleteLabel(id);
+	}
+
 }
