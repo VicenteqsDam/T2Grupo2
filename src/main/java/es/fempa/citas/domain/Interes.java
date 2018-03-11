@@ -1,6 +1,5 @@
 package es.fempa.citas.domain;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,15 +10,9 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Etiqueta {
-
-	@GeneratedValue
+public class Interes {
 	@Id
-	private Integer idEtiqueta;
-
-	@Column(name = "etiqueta")
-	private String etiqueta;
-
-	@Column(name = "icono")
-	private String icono;
+	@GeneratedValue
+	private Integer idInteres;
+	private String interes;
 }
